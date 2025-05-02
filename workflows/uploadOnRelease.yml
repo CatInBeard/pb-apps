@@ -1,0 +1,28 @@
+name: Upload Packages to Release
+
+on:
+  release:
+    types: [created, published, prereleased, released]
+
+permissions:
+  contents: write
+
+jobs:
+  upload-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Build app
+        run: |
+          make build
+      - name: Archive data
+        run: |
+          zip -r release.zip *.app
+
+      - name: Upload release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: release.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

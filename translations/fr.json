@@ -1,0 +1,12 @@
+{
+    "app_name": "Gestionnaire d'applications",
+    "welcome_message" : "Bienvenue dans le Gestionnaire d'applications pour PocketBook, un installateur d'applications non officiel. Cette application est licenciée sous licence MIT et est fournie telle quelle. Vous pouvez trouver le référentiel à l'adresse https://github.com/CatInBeard/pb-apps. Veuillez noter que les applications installées via le Gestionnaire d'applications sont également non officielles et ne comportent aucune garantie.",
+    "network_error_message" : "Erreur, essayez de vous reconnecter au Wi-Fi",
+    "get_list_error_message" : "Erreur de récupération de la liste d'applications, essayez de vous reconnecter au Wi-Fi",
+    "page_hint" : "page",
+    "install_button" : "installer",
+    "cancel_button" : "annuler",
+    "success_install" : "application installée avec succès",
+    "failed_install" : "application non installée",
+    "app.Name" : "Installer cette application ?"
+}

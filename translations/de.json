@@ -1,0 +1,12 @@
+{
+    "app_name": "App-Manager",
+    "welcome_message" : "Willkommen bei App-Manager für PocketBook, einem inoffiziellen App-Installer. Diese Anwendung ist unter der MIT-Lizenz lizenziert und wird wie besehen bereitgestellt. Sie können das Repository unter https://github.com/CatInBeard/pb-apps finden. Bitte beachten Sie, dass die über App-Manager installierten Apps ebenfalls inoffiziell sind und keine Garantien bieten.",
+    "network_error_message" : "Fehler, versuchen Sie, das Wi-Fi wiederherzustellen",
+    "get_list_error_message" : "Fehler bei der App-Liste, versuchen Sie, das Wi-Fi wiederherzustellen",
+    "page_hint" : "Seite",
+    "install_button" : "installieren",
+    "cancel_button" : "abbrechen",
+    "success_install" : "App erfolgreich installiert",
+    "failed_install" : "App nicht installiert",
+    "app.Name" : "Installieren Sie diese App?"
+}

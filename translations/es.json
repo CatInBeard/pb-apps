@@ -1,0 +1,12 @@
+{
+    "app_name": "Administrador de aplicaciones",
+    "welcome_message" : "Bienvenido al Administrador de aplicaciones para PocketBook, un instalador de aplicaciones no oficial. Esta aplicación está licenciada bajo la licencia MIT y se proporciona tal como está. Puede encontrar el repositorio en https://github.com/CatInBeard/pb-apps. Tenga en cuenta que las aplicaciones instaladas a través del Administrador de aplicaciones también son no oficiales y no ofrecen garantías.",
+    "network_error_message" : "Error, intente reconectar el Wi-Fi",
+    "get_list_error_message" : "Error al obtener la lista de aplicaciones, intente reconectar el Wi-Fi",
+    "page_hint" : "página",
+    "install_button" : "instalar",
+    "cancel_button" : "cancelar",
+    "success_install" : "aplicación instalada con éxito",
+    "failed_install" : "aplicación no instalada",
+    "app.Name" : "¿Instalar esta aplicación?"
+}

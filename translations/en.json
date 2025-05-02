@@ -1,0 +1,12 @@
+{
+    "app_name": "App manager",
+    "welcome_message" : "Welcome to App-Manager for PocketBook, an unofficial app installer. This application is licensed under the MIT license and is provided \"as is\". You can find the repository at https://github.com/CatInBeard/pb-apps. Please note that the apps installed through App-Manager are also unofficial and come with no warranties.",
+    "network_error_message" : "Error, try to reconnect wi-fi",
+    "get_list_error_message" : "Error get app list, try to reconnect wi-fi",
+    "page_hint" : "page",
+    "install_button" : "install",
+    "cancel_button" : "cancel",
+    "success_install" : "app installed successfully",
+    "failed_install" : "app not installed",
+    "app.Name" : "Install this app?"
+}
