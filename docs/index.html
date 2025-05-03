@@ -49,8 +49,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+    <script src="./issue.js"></script>
+    <script src="./links.js"></script>
     <div class="mt-5 container border border-top-0">
-        <h1 class="text-center">Pocket book apps manager <i class="bi bi-book"></i></h1>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Select language</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Language <img
+                      src="https://flagcdn.com/16x12/gb.png" alt="English" width="16" height="12">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="./index.html" title="English"> <img src="https://flagcdn.com/16x12/gb.png" alt="English" width="16" height="12"> English</a></li>
+                      <li><a class="dropdown-item" href="./de.html" title="Deutsch"> <img src="https://flagcdn.com/16x12/de.png" alt="Deutsch" width="16" height="12"> Deutsch</a></li>
+                      <li><a class="dropdown-item" href="./fr.html" title="Français"> <img src="https://flagcdn.com/16x12/fr.png" alt="Français" width="16" height="12"> Français</a></li>
+                      <li><a class="dropdown-item" href="./ru.html" title="Русский"> <img src="https://flagcdn.com/16x12/ru.png" alt="Русский" width="16" height="12"> Русский</a></li>
+                      <li><a class="dropdown-item" href="./es.html" title="Español"> <img src="https://flagcdn.com/16x12/es.png" alt="Español" width="16" height="12"> Español</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          
+        <h1 class="text-center">Pocketbook apps manager <i class="bi bi-book"></i></h1>
         <p class="text-center">This app is an unofficial app manager for PocketBook e-readers. It allows you to download
             unofficial pocketbook apps</p>
         <hr>
@@ -82,6 +110,21 @@
             </div>
         </div>
         <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Disclaimer</h2>
+                <p>
+                    This application is licensed under the MIT license and is provided "as is". The apps installed through this installer are also unofficial and come with no warranties.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>Warning</h2>
+                <p>
+                    Please be aware that installing and using unofficial apps on your PocketBook e-reader may pose risks to your device's stability and security. Unofficial apps may not be thoroughly tested or validated, and may potentially cause issues with your device's performance, data, or settings. Before installing any apps, make sure you understand the potential risks and take necessary precautions to protect your device and data.
+                </p>
+            </div>
+        </div>
+        <hr>
         <h2 class="text-center">FAQ <i class="bi bi-question-circle"></i></h2>
         <div class="row">
             <div class="col-md-6">
@@ -107,11 +150,9 @@
                     applications folder, replacing the existing file.</p>
             </div>
             <div class="col-md-6">
-                <h3>Q: How to update the app installer to the latest version?</h3>
-                <p>A: The app installer supports self-update. If the self-update is successful, you will have the latest
-                    version of the app installer. If the self-update fails, you can update the app installer manually by
-                    connecting your e-reader to your computer via a cable and copying the new release file to the
-                    applications folder, replacing the existing file.</p>
+                <h3>Q: I installed the app but it didn't appear in the list of apps?</h3>
+                <p>A: In some cases, the pocketbook does not update the list of applications automatically, 
+                    in which case restarting the e-book should help.</p>
             </div>
         </div>
         
@@ -122,124 +163,6 @@
         
         <div id="issues-container" class="d-none"></div>
 
-        <script>
-            async function getIssues(owner, repo) {
-                try {
-                    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/issues?state=all`);
-        
-                    if (!response.ok) {
-                        throw new Error(`Failed to use github api: ${response.status} ${response.statusText}`);
-                    }
-        
-                    const issues = await response.json();
-        
-                    const issuesContainer = document.getElementById('issues-container');
-        
-                    let hasIssues = false;
-        
-                    issues.forEach(issue => {
-                        if (issue.pull_request === undefined) {
-                            hasIssues = true;
-        
-                            const issueElement = document.createElement('div');
-                            issueElement.className = 'issue';
-        
-                            const issueHeader = document.createElement('div');
-                            issueHeader.className = 'issue-header';
-                            issueHeader.innerHTML = `
-                                <h4>${issue.title}</h4>
-                                <p>Opened by ${issue.user.login} on ${new Date(issue.created_at).toLocaleString()}</p>
-                            `;
-                            issueElement.appendChild(issueHeader);
-        
-                            const issueComments = document.createElement('div');
-                            issueComments.className = 'issue-comments';
-        
-                            const issueBody = document.createElement('div');
-                            issueBody.className = 'issue-body';
-                            issueBody.innerHTML = `
-                                <p>${issue.body}</p>
-                            `;
-                            issueComments.appendChild(issueBody);
-        
-                            getComments(issue.comments_url, issueComments);
-        
-                            issueElement.appendChild(issueComments);
-        
-                            issuesContainer.appendChild(issueElement);
-                        }
-                    });
-        
-                    if (hasIssues) {
-                        issuesContainer.classList.remove('d-none');
-                        issuesHeader.remove("d-none");
-                    } else {
-                        issuesContainer.innerHTML = '<p>No issues found.</p>';
-                    }
-                } catch (error) {
-                    console.error(error);
-                }
-            }
-        
-            async function getComments(url, container) {
-                try {
-                    const response = await fetch(url);
-                    const comments = await response.json();
-        
-                    comments.forEach(comment => {
-                        const commentElement = document.createElement('div');
-                        commentElement.className = 'comment';
-                        commentElement.innerHTML = `
-                            <p>${comment.body}</p>
-                            <p>Commented by ${comment.user.login} on ${new Date(comment.created_at).toLocaleString()}</p>
-                        `;
-                        container.appendChild(commentElement);
-                    });
-                } catch (error) {
-                    console.error(error);
-                }
-            }
-        
-            getIssues("CatInBeard", "pb-apps");
-        </script>
-
-        <script>
-            async function getLatestReleaseZipUrl(owner, repo) {
-                try {
-                    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`);
-
-                    if (!response.ok) {
-                        throw new Error(`Failed to use github api: ${response.status} ${response.statusText}`);
-                    }
-
-                    const release = await response.json();
-
-                    const zipAsset = release.assets.find(asset => asset.name.endsWith('.zip'));
-
-                    if (!zipAsset) {
-                        console.log('release.zip not found');
-                        return null;
-                    }
-
-                    const zipUrl = zipAsset.browser_download_url;
-                    return zipUrl;
-
-                } catch (error) {
-                    console.error(error);
-                    return null;
-                }
-            }
-
-            window.onload = () => {
-                getLatestReleaseZipUrl("CatInBeard", "pb-apps")
-                    .then(zipUrl => {
-                        if (zipUrl) {
-                            release_link.href = zipUrl
-                        }
-                    });
-            }
-
-        </script>
     </div>
 </body>
 

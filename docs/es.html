@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrador de aplicaciones para Pocketbook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        .issue {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .issue-header {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .issue-comments {
+            padding: 20px;
+        }
+
+        .issue-body {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .comment {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script src="./issue.js"></script>
+    <script src="./links.js"></script>
+    <div class="mt-5 container border border-top-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Seleccionar idioma</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Idioma <img src="https://flagcdn.com/16x12/es.png" alt="Español" width="16" height="12">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./index.html" title="English"> <img
+                                            src="https://flagcdn.com/16x12/gb.png" alt="English" width="16" height="12">
+                                        English</a></li>
+                                <li><a class="dropdown-item" href="./de.html" title="Deutsch"> <img
+                                            src="https://flagcdn.com/16x12/de.png" alt="Deutsch" width="16" height="12">
+                                        Deutsch</a></li>
+                                <li><a class="dropdown-item" href="./fr.html" title="Français"> <img
+                                            src="https://flagcdn.com/16x12/fr.png" alt="Français" width="16"
+                                            height="12"> Français</a></li>
+                                <li><a class="dropdown-item" href="./ru.html" title="Русский"> <img
+                                            src="https://flagcdn.com/16x12/ru.png" alt="Русский" width="16" height="12">
+                                        Русский</a></li>
+                                <li><a class="dropdown-item" href="./es.html" title="Español"> <img
+                                            src="https://flagcdn.com/16x12/es.png" alt="Español" width="16" height="12">
+                                        Español</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1 class="text-center">Administrador de aplicaciones para Pocketbook <i class="bi bi-book"></i></h1>
+        <p class="text-center">Esta aplicación es un administrador no oficial de aplicaciones para lectores electrónicos
+            PocketBook. Le permite descargar aplicaciones no oficiales para Pocketbook.</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Instalación</h2>
+                <p>
+                    Para instalar la aplicación, conecte su lector electrónico a su computadora mediante un cable y
+                    copie el
+                    archivo app-manager.app
+                    desde <a href="https://github.com/CatInBeard/pb-apps/releases" id="release_link">release.zip</a> a
+                    la carpeta de aplicaciones. En Linux, puede construir la
+                    aplicación desde el código fuente utilizando el comando make build e instalarla automáticamente en
+                    el
+                    lector electrónico conectado
+                    utilizando el comando make install.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>Código fuente y contribución</h2>
+                <p>
+                    Puede obtener el código fuente del administrador de aplicaciones en <a
+                        href="https://github.com/CatInBeard/pb-apps">github</a>.
+                    Puede agregar su propia aplicación pb. Para hacer esto, necesita copiar <a
+                        href="https://github.com/CatInBeard/pb-apps/blob/main/Makefile">Makefile</a> y <a
+                        href="https://github.com/CatInBeard/pb-apps/blob/main/.github/workflows/uploadOnRelease.yml">.github/workflows/uploadOnRelease.yml</a>
+                    en su repositorio y crear una versión. A continuación, necesita clonar <a
+                        href="https://github.com/CatInBeard/pb-apps">este</a> repositorio, agregar su aplicación a <a
+                        href="https://github.com/CatInBeard/pb-apps/blob/main/repo.json">repo.json</a> y hacer una
+                    solicitud
+                    de extracción. Una vez aceptada la solicitud de extracción, su aplicación se puede descargar a
+                    través del administrador de aplicaciones.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Descargo de responsabilidad</h2>
+                <p>
+                    Esta aplicación está lice
+                    nciada bajo la licencia MIT y se proporciona "tal cual". Las aplicaciones instaladas a través de
+                    este instalador también son no oficiales y no vienen con garantías.
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h2>Advertencia</h2>
+                <p>
+                    Tenga en cuenta que la instalación y el uso de aplicaciones no oficiales en su lector electrónico
+                    PocketBook pueden plantear riesgos para la estabilidad y seguridad de su dispositivo. Las
+                    aplicaciones no oficiales pueden no haber sido probadas o validadas exhaustivamente, y pueden causar
+                    problemas con el rendimiento, los datos o la configuración de su dispositivo. Antes de instalar
+                    cualquier aplicación, asegúrese de comprender los riesgos potenciales y tome las precauciones
+                    necesarias para proteger su dispositivo y sus datos.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <h2 class="text-center">Preguntas frecuentes (FAQ) <i class="bi bi-question-circle"></i></h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>P: ¿Cómo instalar el instalador de aplicaciones en PocketBook?</h3>
+                <p>R: Para instalar la aplicación, conecte su lector electrónico a su computadora mediante un cable y
+                    copie el
+                    archivo de la versión en la carpeta de aplicaciones. En Linux, puede construir la aplicación desde
+                    el código fuente utilizando
+                    el comando make build e instalarla automáticamente en el lector electrónico conectado utilizando el
+                    comando make
+                    install.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>P: ¿Cuáles son los riesgos de usar aplicaciones no oficiales?</h3>
+                <p>R: El uso de aplicaciones no oficiales puede plantear riesgos para su lector electrónico, incluyendo
+                    la eliminación de archivos o configuraciones importantes del sistema,
+                    cambio de la configuración del sistema, instalación de software no verificado o malicioso, y
+                    acceso a información o configuraciones confidenciales.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>P: ¿Cómo actualizar el instalador de aplicaciones a la última versión?</h3>
+                <p>R: El instalador de aplicaciones admite la autoactualización. Si la autoactualización es exitosa,
+                    tendrá la última
+                    versión del instalador de aplicaciones. Si la autoactualización falla, puede actualizar el
+                    instalador de aplicaciones manualmente
+                    conectando su lector electrónico a su computadora mediante un cable y copiando el nuevo archivo de
+                    la versión en el
+                    carpeta de aplicaciones, reemplazando el archivo existente.</p>
+            </div>
+            <div class="col-md-6">
+                <h3>P: ¿Instalé la aplicación pero no apareció en la lista de aplicaciones?</h3>
+                <p>R: En algunos casos, el pocketbook no actualiza la lista de aplicaciones automáticamente,
+                    en cuyo caso reiniciar el libro electrónico debería ayudar.</p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h3>¿Aún tiene preguntas?</h3>
+            <p>No dude en preguntar <a href="https://github.com/CatInBeard/pb-apps/issues">aquí</a></p>
+        </div>
+
+        <div id="issues-container" class="d-none"></div>
+
+    </div>
+</body>
+
+</html>

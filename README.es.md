@@ -1,6 +1,6 @@
 # pb-apps
 [English](README.md) | [Русский](README.ru.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md)  
-Instalador de aplicaciones no oficial para lectores de PocketBook.
+Instalador de aplicaciones no oficial para lectores de PocketBook. Leer más [aquí](https://catinbeard.github.io/pb-apps/es.html).
 ## Advertencia
 Esta aplicación se distribuye bajo licencia MIT y se proporciona "tal como es". Las aplicaciones instaladas a través de este instalador también son no oficiales y no tienen garantía.
 ## Descripción
