@@ -108,9 +108,13 @@ func (a *ListApps) Key(e ink.KeyEvent) bool {
 func (a *ListApps) Pointer(e ink.PointerEvent) bool {
 
 	if e.State == ink.PointerDown {
+		appsCount := len(a.appList)
 		index := a.getItemOnPage(e.Point)
-		a.currentSelectedAppKey = a.appKeys[a.getAppIndex(index)]
-		ink.Repaint()
+		currentPageAppsCount := int(math.Min(float64(a.page*pageSize), float64(appsCount))) - (a.page-1)*pageSize
+		if index < currentPageAppsCount {
+			a.currentSelectedAppKey = a.appKeys[a.getAppIndex(index)]
+			ink.Repaint()
+		}
 	} else if e.State == ink.PointerUp {
 		app := a.appList[a.currentSelectedAppKey]
 		a.shouldRepaint = false
@@ -154,6 +158,7 @@ func (a *ListApps) handleInstallDialog(button int) {
 		}
 	}
 
+	a.shouldRepaint = true
 	a.currentSelectedAppKey = ""
 	ink.Repaint()
 }
