@@ -1,18 +1,17 @@
 # pb-apps
 [English](README.md) | [Русский](README.ru.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md)  
 Nicht offizieller App-Installer für PocketBook-E-Book-Reader. Lesen Sie [hier](https://catinbeard.github.io/pb-apps/de.html) mehr.
-## Haftungsausschluss
-Diese Anwendung wird unter der MIT-Lizenz verteilt und wird "wie besehen" bereitgestellt. Die über diesen Installer installierten Apps sind ebenfalls nicht offiziell und haben keine Garantie.
 ## Beschreibung
 Dieses Repository enthält einen nicht offiziellen App-Installer für PocketBook-E-Book-Reader. Der Installer ermöglicht es Benutzern, nicht offizielle Apps auf ihren Geräten leicht zu installieren und zu verwalten.
 ## Installation
 Um die Anwendung zu installieren, verbinden Sie Ihren E-Book-Reader mit Ihrem Computer über ein Kabel und kopieren Sie die Release-Datei in das Verzeichnis der Anwendungen. Unter Linux können Sie die Anwendung aus dem Quellcode kompilieren, indem Sie den Befehl `make build` verwenden, und sie automatisch auf dem verbundenen E-Book-Reader installieren, indem Sie den Befehl `make install` verwenden.
 ## Lizenz
-Das Projekt wird unter der MIT-Lizenz verteilt.
+Das Projekt wird unter der [MIT-Lizenz](./LICENSE) verteilt.
 ## Warnung
 Bitte beachten Sie, dass die Installation und der Einsatz nicht offizieller Apps auf Ihrem PocketBook-E-Book-Reader Risiken für die Stabilität und Sicherheit Ihres Geräts darstellen können. Nicht offizielle Apps können nicht gründlich getestet oder überprüft worden sein und können möglicherweise Probleme mit der Leistung, den Daten oder der Konfiguration Ihres Geräts verursachen. Stellen Sie sicher, dass Sie die potenziellen Risiken verstehen, bevor Sie eine App installieren, und treffen Sie die notwendigen Vorsichtsmaßnahmen, um Ihr Gerät und Ihre Daten zu schützen.
 
 ## Haftungsausschluss
+Diese Anwendung wird unter der MIT-Lizenz verteilt und wird "wie besehen" bereitgestellt. Die über diesen Installer installierten Apps sind ebenfalls nicht offiziell und haben keine Garantie.
 Der Entwickler des App-Installers lehnt jede Gewährleistung, ausdrücklich oder stillschweigend, ab, einschließlich, aber nicht beschränkt auf, Gewährleistungen für die Handelsüblichkeit, die Eignung für einen bestimmten Zweck und die Nichtverletzung von Rechten. Sie verwenden den App-Installer auf eigenes Risiko. Es wird keine Haftung für Schäden oder Verluste übernommen, die durch die Verwendung des App-Installers entstehen.
 
 ## Häufig gestellte Fragen

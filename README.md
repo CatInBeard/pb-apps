@@ -1,8 +1,6 @@
 # pb-apps
 [English](README.md) | [Русский](README.ru.md) | [Français](README.fr.md) | [Español](README.es.md) | [Deutsch](README.de.md)  
 An unofficial app installer for PocketBook e-readers. Read more [here](https://catinbeard.github.io/pb-apps/).
-## Disclaimer
-This application is licensed under the MIT license and is provided "as is". The apps installed through this installer are also unofficial and come with no warranties.
 ## Description
 This repository contains an unofficial app installer for PocketBook e-readers. The installer allows users to easily install and manage unofficial apps on their devices.
 ## Installation
@@ -13,7 +11,7 @@ The project is licensed under the MIT license.
 Please be aware that installing and using unofficial apps on your PocketBook e-reader may pose risks to your device's stability and security. Unofficial apps may not be thoroughly tested or validated, and may potentially cause issues with your device's performance, data, or settings. Before installing any apps, make sure you understand the potential risks and take necessary precautions to protect your device and data.
 
 ## Disclaimer
-The developer of the app installer disclaims any warranty, express or implied, including, but not limited to, the warranties of merchantability, fitness for a particular purpose, and non-infringement. You use the app installer at your own risk. No liability is assumed for any damages or losses arising from the use of the app installer.
+This application is licensed under the [MIT license](./LICENSE) and is provided "as is". The apps installed through this installer are also unofficial and come with no warranties. The developer of the app installer disclaims any warranty, express or implied, including, but not limited to, the warranties of merchantability, fitness for a particular purpose, and non-infringement. You use the app installer at your own risk. No liability is assumed for any damages or losses arising from the use of the app installer.
 
 ## FAQ
 
