@@ -1,15 +1,6 @@
 {
     "repositories": [
         {
-            "name": "pb-terminal",
-            "binary-name": "terminal.app",
-            "url": "https://github.com/CatInBeard/pb-terminal",
-            "description": "Terminal emulator for pocketbook linux readers",
-            "license": "MIT",
-            "version": "0.7.0",
-            "release_link": "https://api.github.com/repos/CatInBeard/pb-terminal/zipball/0.7.0"
-        },
-        {
             "name": "pb-apps",
             "binary-name": "app-manager.app",
             "url": "https://github.com/CatInBeard/pb-apps",
@@ -17,6 +8,15 @@
             "license": "MIT",
             "version": "0.0.2",
             "release_link": "https://api.github.com/repos/CatInBeard/pb-apps/zipball/0.0.2"
+        },
+        {
+            "name": "pb-terminal",
+            "binary-name": "terminal.app",
+            "url": "https://github.com/CatInBeard/pb-terminal",
+            "description": "Terminal emulator for pocketbook linux readers",
+            "license": "MIT",
+            "version": "0.7.0",
+            "release_link": "https://api.github.com/repos/CatInBeard/pb-terminal/zipball/0.7.0"
         }
     ]
 }
