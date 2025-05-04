@@ -6,7 +6,7 @@ import sys
 github_token = os.environ.get('GITHUB_TOKEN')
 
 if github_token is None:
-        sys.stderr.write("Token not found\n")
+    sys.stderr.write("Token not found\n")
 
 repo_json_url = 'https://raw.githubusercontent.com/CatInBeard/pb-apps/refs/heads/main/repo.json'
 
@@ -31,11 +31,11 @@ for repo in repo_data['repositories']:
     if response.status_code == 200:
         release_data = response.json()
         repo['version'] = release_data['tag_name']
-        repo['release_link'] = release_data['zipball_url']
+        repo['release_link'] = f'https://github.com/{repo_owner}/{repo_name}/releases/download/{release_data["tag_name"]}/release.zip'
     else:
         sys.stderr.write("Repo " + repo_name + "/" + repo_owner+ " returns " + str(response.status_code) +" \n")
         exit(1)
     
-with open('repo.json', 'w') as f:
-    json.dump(repo_data, f, indent=4)
+with open('repo.json', 'w', encoding='utf-8') as f:
+    json.dump(repo_data, f, indent=4, ensure_ascii=False)
 print("Successfully update repo")

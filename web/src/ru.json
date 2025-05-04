@@ -36,5 +36,6 @@
     "repo_hint_source_code": "Исходный код",
     "repo_hint_version": "Версия",
     "repo_hint_license": "Лицензия",
-    "repo_hint_download": "Скачать"
+    "repo_hint_download": "Скачать",
+    "comments": "Комментарии"
 }

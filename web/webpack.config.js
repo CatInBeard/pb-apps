@@ -14,7 +14,7 @@ const languages = [
 ];
 
 const repoData = JSON.parse(fs.readFileSync('./src/repo.json', 'utf8'));
-
+const issuesData = JSON.parse(fs.readFileSync('./src/issues.json', 'utf8'));
 
 module.exports = {
     entry: './src/index.js',
@@ -48,7 +48,8 @@ module.exports = {
                 filename: lang.filename,
                 templateParameters: {
                     ...translations,
-                    repositories: repoData.repositories
+                    repositories: repoData.repositories,
+                    issues : issuesData
                   },
                 inject: true,
                 link: true

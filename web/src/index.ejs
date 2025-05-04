@@ -129,6 +129,49 @@
             </div>
         </div>
 
+        <% if (issues.length > 0) { %>
+            <h2>Issues</h2>
+            <ul class="list-group">
+                <% issues.forEach(function(issue) { %>
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                    <div class="mr-2">
+                        <span class="badge badge-primary"><%= issue.number %></span>
+                        <span class="font-weight-bold"><%= issue.title %></span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-muted"><%= issue.state %></span>
+                        <span class="text-muted"><%= issue.created_at %></span>
+                    </div>
+                    </div>
+                    <div class="mt-2">
+                    <p><%= issue.body %></p>
+                    </div>
+                    <div class="mt-2">
+                    <h5><%= comments %>:</h5>
+                    <ul class="list-group">
+                        <% issue.comments.forEach(function(comment) { %>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2">
+                                <span class="font-weight-bold"><%= comment.user.login %></span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-muted"><%= comment.created_at %></span>
+                            </div>
+                            </div>
+                            <div class="mt-2">
+                            <p><%= comment.body %></p>
+                            </div>
+                        </li>
+                        <% }); %>
+                    </ul>
+                    </div>
+                </li>
+                <% }); %>
+            </ul>
+        <% } %>
+
         <div class="text-center">
             <h3><%= stil_have_questions %></h3>
             <p><%= feel_free_to_ask %> <a href="https://github.com/CatInBeard/pb-apps/issues"><%= here %></a></p>

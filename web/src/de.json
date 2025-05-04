@@ -36,5 +36,6 @@
     "repo_hint_source_code": "Quellcode",
     "repo_hint_version": "Version",
     "repo_hint_license": "Lizenz",
-    "repo_hint_download": "Herunterladen"
+    "repo_hint_download": "Herunterladen",
+    "comments": "Kommentare"
 }
