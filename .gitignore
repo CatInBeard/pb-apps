@@ -24,5 +24,5 @@ go.work.sum
 # env file
 .env
 
-mode_modules
+node_modules
 docs/dist
