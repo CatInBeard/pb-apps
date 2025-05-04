@@ -17,7 +17,7 @@
     <div class="mt-5 container border border-top-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Select language</a>
+                <a class="navbar-brand" href="#"><%= select_language %></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Language 🇬🇧
+                                <%= language %> 🇬🇧
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="./index.html" title="English">🇬🇧 English</a></li>
@@ -43,99 +43,78 @@
             </div>
         </nav>
 
-        <h1 class="text-center">Pocketbook apps manager <i class="bi bi-book"></i></h1>
-        <p class="text-center">This app is an unofficial app manager for PocketBook e-readers. It allows you to download
-            unofficial pocketbook apps</p>
+        <h1 class="text-center"><%= title %> <i class="bi bi-book"></i></h1>
+        <p class="text-center"><%= description %></p>
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <h2>Installation</h2>
+                <h2><%= installation %></h2>
                 <p>
-                    To install the application, connect your e-reader to your computer via a cable and copy the
-                    app-manager.app
-                    from <a href="https://github.com/CatInBeard/pb-apps/releases" id="release_link">release.zip</a> to
-                    the applications folder. On Linux, you can build the
-                    application from source using the command make build and automatically install it on the connected
-                    e-reader
-                    using the command make install.
+                    <%= installation_instruction_part_1 %> <a href="https://github.com/CatInBeard/pb-apps/releases" id="release_link">release.zip</a> <%= to %>
+                    <%= installation_instruction_part_2 %>
                 </p>
             </div>
             <div class="col-md-6">
-                <h2>Source code and contribute</h2>
+                <h2><%= source_code %></h2>
                 <p>
-                    You can get app manager source code on <a href="https://github.com/CatInBeard/pb-apps">github</a>.
-                    You can add your own pb app. To do this you need to copy <a
-                        href="https://github.com/CatInBeard/pb-apps/blob/main/Makefile">Makefile</a> and <a
+                    <%= source_code_text_1 %> <a href="https://github.com/CatInBeard/pb-apps">github</a>.
+                    <%= source_code_text_2 %> <a
+                        href="https://github.com/CatInBeard/pb-apps/blob/main/Makefile">Makefile</a> <%= and %> <a
                         href="https://github.com/CatInBeard/pb-apps/blob/main/.github/workflows/uploadOnRelease.yml">.github/workflows/uploadOnRelease.yml</a>
-                    in your repo and create a release. Next you need to clone <a
-                        href="https://github.com/CatInBeard/pb-apps">this</a> repo, add your app to <a
-                        href="https://github.com/CatInBeard/pb-apps/blob/main/repo.json">repo.json</a> and make a pull
-                    request. After pull request accepted, your app can be downloaded by app manager
+                    <%= source_code_text_3 %> <a
+                        href="https://github.com/CatInBeard/pb-apps"><%= this_text %></a> <%= source_code_text_4 %> <a
+                        href="https://github.com/CatInBeard/pb-apps/blob/main/repo.json">repo.json</a> <%= source_code_text_5 %>
                 </p>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col-md-6">
-                <h2>Disclaimer</h2>
+                <h2><%= disclaimer %></h2>
                 <p>
-                    This application is licensed under the MIT license and is provided "as is". The apps installed
-                    through this installer are also unofficial and come with no warranties.
+                    <%= disclaimer_text %>
                 </p>
             </div>
             <div class="col-md-6">
-                <h2>Warning</h2>
+                <h2><%= warning %></h2>
                 <p>
-                    Please be aware that installing and using unofficial apps on your PocketBook e-reader may pose risks
-                    to your device's stability and security. Unofficial apps may not be thoroughly tested or validated,
-                    and may potentially cause issues with your device's performance, data, or settings. Before
-                    installing any apps, make sure you understand the potential risks and take necessary precautions to
-                    protect your device and data.
+                    <%= warning_text %>
                 </p>
             </div>
         </div>
         <hr>
         <div id="app-list-block" class="d-none">
-            <h2>Currently available apps list:</h2>
+            <h2><%= availvable_apps %>:</h2>
             <div id="app-list">
             </div>
             <hr>
         </div>
 
-        <h2 class="text-center">FAQ <i class="bi bi-question-circle"></i></h2>
+        <h2 class="text-center"><%= faq %> <i class="bi bi-question-circle"></i></h2>
         <div class="row">
             <div class="col-md-6">
-                <h3>Q: How to install the app installer on PocketBook?</h3>
-                <p>A: To install the application, connect your e-reader to your computer via a cable and copy the
-                    release file to the applications folder. On Linux, you can build the application from source using
-                    the command make build and automatically install it on the connected e-reader using the command make
-                    install.</p>
+                <h3><%= question_install %></h3>
+                <p><%= answer_install %></p>
             </div>
             <div class="col-md-6">
-                <h3>Q: What are the risks of using unofficial apps?</h3>
-                <p>A: Using unofficial apps can pose risks to your e-reader, including deleting important system files
-                    or settings, changing system configuration, installing unverified or malicious software, and
-                    accessing sensitive information or settings.</p>
+                <h3><%= question_risks %></h3>
+                <p><%= answer_risks %></p>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Q: How to update the app installer to the latest version?</h3>
-                <p>A: The app installer supports self-update. If the self-update is successful, you will have the latest
-                    version of the app installer. If the self-update fails, you can update the app installer manually by
-                    connecting your e-reader to your computer via a cable and copying the new release file to the
-                    applications folder, replacing the existing file.</p>
+                <h3><%= update_question %></h3>
+                <p><%= update_answer %></p>
             </div>
             <div class="col-md-6">
-                <h3>Q: I installed the app but it didn't appear in the list of apps?</h3>
-                <p>A: In some cases, the pocketbook does not update the list of applications automatically,
-                    in which case restarting the e-book should help.</p>
+                <h3><%= app_not_found_question %></h3>
+                <p><%= app_not_found_answer %></p>
             </div>
         </div>
 
         <div class="text-center">
-            <h3>Still have questions?</h3>
-            <p>Feel free to ask <a href="https://github.com/CatInBeard/pb-apps/issues">here</a></p>
+            <h3><%= stil_have_questions %></h3>
+            <p><%= feel_free_to_ask %> <a href="https://github.com/CatInBeard/pb-apps/issues"><%= here %></a></p>
         </div>
 
         <div id="issues-container" class="d-none"></div>
