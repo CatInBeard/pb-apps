@@ -86,7 +86,15 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title"><%= repository.name %></h5>
-                    <p class="card-text"><%= repository.description %></p>
+                    <p class="card-text">
+                        <% if (repository['description-translations'] && repository['description-translations'][language_short]) { %>
+                            <%= repository['description-translations'][language_short] %>
+                          <% } else if (repository['description-translations'] && repository['description-translations']['en']) { %>
+                            <%= repository['description-translations']['en'] %>
+                          <% } else { %>
+                            <%= repository.description %>
+                          <% } %>                          
+                    </p>
                     <p class="card-text"><%= repo_hint_source_code %>: <i class="bi bi-github"></i> <a href="<%= repository.url %>">GitHub</a></p>
                     <p class="card-text"><%= repo_hint_version %>: <%= repository.version %></p>
                     <p class="card-text"><%= repo_hint_license %>: <%= repository.license %></p>

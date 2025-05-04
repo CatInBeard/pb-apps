@@ -5,6 +5,13 @@
       "binary-name": "app-manager.app",
       "url": "https://github.com/CatInBeard/pb-apps",
       "description": "App manager for pockerbook linux readers",
+      "description-translations": {
+        "en": "App manager for pockerbook linux readers",
+        "ru": "Менеджер приложений для PocketBook на базе Linux",
+        "fr": "Gestionnaire d'applications pour les liseuses PocketBook Linux",
+        "de": "App-Manager für PocketBook Linux E-Reader",
+        "es": "Administrador de aplicaciones para lectores PocketBook Linux"
+      },
       "license": "MIT"
     },
     {
@@ -12,6 +19,13 @@
       "binary-name": "terminal.app",
       "url": "https://github.com/CatInBeard/pb-terminal",
       "description": "Terminal emulator for pocketbook linux readers",
+      "description-translations" : {
+        "en": "Terminal emulator for pocketbook linux readers",
+        "ru": "Эмулятор терминала для PocketBook на базе Linux",
+        "fr": "Émulateur de terminal pour liseuses PocketBook Linux",
+        "de": "Terminalemulator für PocketBook Linux E-Reader",
+        "es": "Emulador de terminal para lectores PocketBook Linux"
+      },
       "license": "MIT"
     }
   ]
