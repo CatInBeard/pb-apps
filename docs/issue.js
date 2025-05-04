@@ -9,15 +9,12 @@ async function getIssues(owner, repo, cacheTimeMinutes = 30) {
             const cacheExpirationTime = timestamp + cacheTimeMinutes * 60 * 1000;
 
             if (now < cacheExpirationTime) {
-                console.log("Данные о issues взяты из кэша");
                 displayIssues(data);
                 return;
             } else {
                 localStorage.removeItem(cacheKey);
-                console.log("Кэш issues устарел, удаляем");
             }
         } catch (error) {
-            console.error("Ошибка при разборе данных о issues из кэша:", error);
             localStorage.removeItem(cacheKey);
         }
     }
@@ -31,14 +28,12 @@ async function getIssues(owner, repo, cacheTimeMinutes = 30) {
 
         const issues = await response.json();
 
-        // Кэшируем данные о issues
         const dataToCache = {
             timestamp: Date.now(),
             data: issues
         };
 
         localStorage.setItem(cacheKey, JSON.stringify(dataToCache));
-        console.log("Данные о issues сохранены в кэш");
 
         displayIssues(issues);
     } catch (error) {
@@ -54,18 +49,15 @@ async function getComments(url, container) {
         try {
             const { timestamp, data } = JSON.parse(cachedData);
             const now = Date.now();
-            const cacheExpirationTime = timestamp + 30 * 60 * 1000; // Кэшируем комментарии на 30 минут
+            const cacheExpirationTime = timestamp + 90 * 60 * 1000;
 
             if (now < cacheExpirationTime) {
-                console.log("Комментарии взяты из кэша");
                 displayComments(data, container);
                 return;
             } else {
                 localStorage.removeItem(cacheKey);
-                console.log("Кэш комментариев устарел, удаляем");
             }
         } catch (error) {
-            console.error("Ошибка при разборе данных о комментариях из кэша:", error);
             localStorage.removeItem(cacheKey);
         }
     }
@@ -77,14 +69,12 @@ async function getComments(url, container) {
         }
         const comments = await response.json();
 
-        // Кэшируем данные о комментариях
         const dataToCache = {
             timestamp: Date.now(),
             data: comments
         };
 
         localStorage.setItem(cacheKey, JSON.stringify(dataToCache));
-        console.log("Комментарии сохранены в кэш");
 
         displayComments(comments, container);
     } catch (error) {
@@ -150,8 +140,6 @@ function displayIssues(issues) {
         if (issuesHeader) {
             issuesHeader.classList.remove("d-none");
         }
-    } else {
-        issuesContainer.innerHTML = '<p>No issues found.</p>';
     }
 }
 

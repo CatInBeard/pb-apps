@@ -17,24 +17,24 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-    
+
         .issue-header {
             background-color: #f0f0f0;
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
-    
+
         .issue-comments {
             padding: 20px;
         }
-    
+
         .issue-body {
             background-color: #f9f9f9;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 10px;
         }
-    
+
         .comment {
             margin-top: 20px;
             padding: 10px;
@@ -42,7 +42,7 @@
             border-radius: 10px;
             background-color: #f9f9f9;
         }
-    </style>        
+    </style>
 </head>
 
 <body>
@@ -51,33 +51,36 @@
         crossorigin="anonymous"></script>
     <script src="./issue.js"></script>
     <script src="./links.js"></script>
+    <script src="./app_list.js"></script>
     <div class="mt-5 container border border-top-0">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Select language</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Language <img
-                      src="https://flagcdn.com/16x12/gb.png" alt="English" width="16" height="12">
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="./index.html" title="English"> <img src="https://flagcdn.com/16x12/gb.png" alt="English" width="16" height="12"> English</a></li>
-                      <li><a class="dropdown-item" href="./de.html" title="Deutsch"> <img src="https://flagcdn.com/16x12/de.png" alt="Deutsch" width="16" height="12"> Deutsch</a></li>
-                      <li><a class="dropdown-item" href="./fr.html" title="Français"> <img src="https://flagcdn.com/16x12/fr.png" alt="Français" width="16" height="12"> Français</a></li>
-                      <li><a class="dropdown-item" href="./ru.html" title="Русский"> <img src="https://flagcdn.com/16x12/ru.png" alt="Русский" width="16" height="12"> Русский</a></li>
-                      <li><a class="dropdown-item" href="./es.html" title="Español"> <img src="https://flagcdn.com/16x12/es.png" alt="Español" width="16" height="12"> Español</a></li>
+                <a class="navbar-brand" href="#">Select language</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Language 🇬🇧
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="./index.html" title="English">🇬🇧 English</a></li>
+                                <li><a class="dropdown-item" href="./de.html" title="Deutsch">🇩🇪 Deutsch</a></li>
+                                <li><a class="dropdown-item" href="./fr.html" title="Français">🇫🇷 Français</a></li>
+                                <li><a class="dropdown-item" href="./ru.html" title="Русский">🇷🇺 Русский</a></li>
+                                <li><a class="dropdown-item" href="./es.html" title="Español">🇪🇸 Español</a></li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                </ul>
-              </div>
+                </div>
             </div>
-          </nav>
-          
+        </nav>
+
         <h1 class="text-center">Pocketbook apps manager <i class="bi bi-book"></i></h1>
         <p class="text-center">This app is an unofficial app manager for PocketBook e-readers. It allows you to download
             unofficial pocketbook apps</p>
@@ -114,17 +117,29 @@
             <div class="col-md-6">
                 <h2>Disclaimer</h2>
                 <p>
-                    This application is licensed under the MIT license and is provided "as is". The apps installed through this installer are also unofficial and come with no warranties.
+                    This application is licensed under the MIT license and is provided "as is". The apps installed
+                    through this installer are also unofficial and come with no warranties.
                 </p>
             </div>
             <div class="col-md-6">
                 <h2>Warning</h2>
                 <p>
-                    Please be aware that installing and using unofficial apps on your PocketBook e-reader may pose risks to your device's stability and security. Unofficial apps may not be thoroughly tested or validated, and may potentially cause issues with your device's performance, data, or settings. Before installing any apps, make sure you understand the potential risks and take necessary precautions to protect your device and data.
+                    Please be aware that installing and using unofficial apps on your PocketBook e-reader may pose risks
+                    to your device's stability and security. Unofficial apps may not be thoroughly tested or validated,
+                    and may potentially cause issues with your device's performance, data, or settings. Before
+                    installing any apps, make sure you understand the potential risks and take necessary precautions to
+                    protect your device and data.
                 </p>
             </div>
         </div>
         <hr>
+        <div id="app-list-block" class="d-none">
+            <h2>Currently available apps list:</h2>
+            <div id="app-list">
+            </div>
+            <hr>
+        </div>
+
         <h2 class="text-center">FAQ <i class="bi bi-question-circle"></i></h2>
         <div class="row">
             <div class="col-md-6">
@@ -151,16 +166,16 @@
             </div>
             <div class="col-md-6">
                 <h3>Q: I installed the app but it didn't appear in the list of apps?</h3>
-                <p>A: In some cases, the pocketbook does not update the list of applications automatically, 
+                <p>A: In some cases, the pocketbook does not update the list of applications automatically,
                     in which case restarting the e-book should help.</p>
             </div>
         </div>
-        
+
         <div class="text-center">
             <h3>Still have questions?</h3>
             <p>Feel free to ask <a href="https://github.com/CatInBeard/pb-apps/issues">here</a></p>
         </div>
-        
+
         <div id="issues-container" class="d-none"></div>
 
     </div>
