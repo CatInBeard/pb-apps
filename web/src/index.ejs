@@ -28,7 +28,17 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <%= language %> 🇬🇧
+                                <%= language %> <% if (language_short === 'en') { %>
+                                    🇬🇧
+                                  <% } else if (language_short === 'ru') { %>
+                                    🇷🇺
+                                  <% } else if (language_short === 'fr') { %>
+                                    🇫🇷
+                                  <% } else if (language_short === 'de') { %>
+                                    🇩🇪
+                                  <% } else if (language_short === 'es') { %>
+                                    🇪🇸
+                                  <% } %>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="./index.html" title="English">🇬🇧 English</a></li>
@@ -50,7 +60,7 @@
             <div class="col-md-6">
                 <h2><%= installation %></h2>
                 <p>
-                    <%= installation_instruction_part_1 %> <a href="https://github.com/CatInBeard/pb-apps/releases" id="release_link">release.zip</a> <%= to %>
+                    <%= installation_instruction_part_1 %> <a href="<%= repositories[0].release_link %>">release.zip</a> <%= to %>
                     <%= installation_instruction_part_2 %>
                 </p>
             </div>
@@ -83,12 +93,25 @@
             </div>
         </div>
         <hr>
-        <div id="app-list-block" class="d-none">
-            <h2><%= availvable_apps %>:</h2>
-            <div id="app-list">
-            </div>
-            <hr>
-        </div>
+        <h2><%= availvable_apps %>:</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <% repositories.forEach(repository => { %>
+              <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= repository.name %></h5>
+                    <p class="card-text"><%= repository.description %></p>
+                    <p class="card-text"><%= repo_hint_source_code %>: <i class="bi bi-github"></i> <a href="<%= repository.url %>">GitHub</a></p>
+                    <p class="card-text"><%= repo_hint_version %>: <%= repository.version %></p>
+                    <p class="card-text"><%= repo_hint_license %>: <%= repository.license %></p>
+                    <a href="<%= repository.release_link %>" class="btn btn-primary"><%= repo_hint_download %></a>
+                  </div>
+                </div>
+              </div>
+            <% }); %>
+          </div>          
+        <hr>
+
 
         <h2 class="text-center"><%= faq %> <i class="bi bi-question-circle"></i></h2>
         <div class="row">

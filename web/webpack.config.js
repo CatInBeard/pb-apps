@@ -13,6 +13,9 @@ const languages = [
     { lang: 'es', filename: 'es.html' },
 ];
 
+const repoData = JSON.parse(fs.readFileSync('./src/repo.json', 'utf8'));
+
+
 module.exports = {
     entry: './src/index.js',
     output: {
@@ -43,7 +46,10 @@ module.exports = {
             return new HtmlWebpackPlugin({
                 template: './src/index.ejs',
                 filename: lang.filename,
-                templateParameters: translations,
+                templateParameters: {
+                    ...translations,
+                    repositories: repoData.repositories
+                  },
                 inject: true,
                 link: true
             });

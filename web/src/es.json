@@ -1,4 +1,5 @@
 {
+    "language_short" : "es",
     "title": "Pocketbook apps manager",
     "select_language": "Seleccionar idioma",
     "language": "Idioma",
@@ -31,5 +32,9 @@
     "app_not_found_answer" : "En algunos casos, el Pocketbook no actualiza la lista de aplicaciones automáticamente, en cuyo caso reiniciar el libro electrónico debería ayudar.",
     "stil_have_questions" : "¿Aún tienes preguntas?",
     "feel_free_to_ask" : "No dudes en preguntar",
-    "here" : "aquí"
+    "here" : "aquí",
+    "repo_hint_source_code": "Código fuente",
+    "repo_hint_version": "Versión",
+    "repo_hint_license": "Licencia",
+    "repo_hint_download": "Descargar"
 }

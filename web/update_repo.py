@@ -36,11 +36,6 @@ for repo in repo_data['repositories']:
         sys.stderr.write("Repo " + repo_name + "/" + repo_owner+ " returns " + str(response.status_code) +" \n")
         exit(1)
     
-dist_dir = './dist'
-if not os.path.exists(dist_dir):
-    os.makedirs(dist_dir)
-
-output_file = os.path.join(dist_dir, 'updated_repo.json')
-with open(output_file, 'w') as f:
+with open('repo.json', 'w') as f:
     json.dump(repo_data, f, indent=4)
 print("Successfully update repo")
