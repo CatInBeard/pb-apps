@@ -4,9 +4,9 @@
       "name": "pb-apps",
       "binary-name": "app-manager.app",
       "url": "https://github.com/CatInBeard/pb-apps",
-      "description": "App manager for pockerbook linux readers",
+      "description": "App manager for pocketbook linux readers",
       "description-translations": {
-        "en": "App manager for pockerbook linux readers",
+        "en": "App manager for pocketbook linux readers",
         "ru": "Менеджер приложений для PocketBook на базе Linux",
         "fr": "Gestionnaire d'applications pour les liseuses PocketBook Linux",
         "de": "App-Manager für PocketBook Linux E-Reader",
@@ -25,6 +25,20 @@
         "fr": "Émulateur de terminal pour liseuses PocketBook Linux",
         "de": "Terminalemulator für PocketBook Linux E-Reader",
         "es": "Emulador de terminal para lectores PocketBook Linux"
+      },
+      "license": "MIT"
+    },
+    {
+      "name": "pb-devinfo",
+      "binary-name": "devinfo.app",
+      "url": "https://github.com/CatInBeard/pb-devinfo",
+      "description": "This app collects information about pocketbook device and displays it on the screen. The application does not transmit data, only displays it on the screen",
+      "description-translations" : {
+        "en": "This app collects information about pocketbook device and displays it on the screen. The application does not transmit data, only displays it on the screen",
+        "ru": "Это приложение собирает информацию о карманном устройстве и отображает ее на экране. Приложение не передает данные, а только отображает их на экране",
+        "fr": "L'application ne transmet pas de données, elle les affiche uniquement à l'écran",
+        "de": "Diese App sammelt Informationen über das Pocketbook-Gerät und zeigt sie auf dem Bildschirm an. Die Anwendung überträgt keine Daten, sondern zeigt sie nur auf dem Bildschirm an.",
+        "es": "Esta aplicación recopila información sobre el dispositivo Pocketbook y la muestra en la pantalla. No transmite datos, solo los muestra."
       },
       "license": "MIT"
     }
